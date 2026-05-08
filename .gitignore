@@ -31,3 +31,5 @@ Thumbs.db
 # Env files (keep .env.example)
 .env
 !.env.example
+
+package-lock.json
