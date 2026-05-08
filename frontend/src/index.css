@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-ink-950 text-ink-100 font-sans antialiased;
+  }
+
+  * {
+    @apply border-ink-800;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-ink-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-ink-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-ink-600;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-ink-900 border border-ink-800 rounded-xl;
+  }
+
+  .btn-primary {
+    @apply bg-glow hover:bg-glow-dark text-white font-medium px-4 py-2 rounded-lg transition-all duration-150 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply text-ink-300 hover:text-ink-100 hover:bg-ink-800 font-medium px-4 py-2 rounded-lg transition-all duration-150;
+  }
+
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white font-medium px-4 py-2 rounded-lg transition-all duration-150 active:scale-95;
+  }
+
+  .input {
+    @apply w-full bg-ink-800 border border-ink-700 text-ink-100 placeholder-ink-500 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-glow focus:ring-1 focus:ring-glow transition-colors;
+  }
+
+  .label {
+    @apply block text-xs font-medium text-ink-400 mb-1.5 uppercase tracking-wide;
+  }
+
+  .badge-todo {
+    @apply inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-ink-800 text-ink-300 border border-ink-700;
+  }
+
+  .badge-progress {
+    @apply inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-blue-900/40 text-blue-300 border border-blue-800/50;
+  }
+
+  .badge-done {
+    @apply inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-emerald-900/40 text-emerald-300 border border-emerald-800/50;
+  }
+
+  .priority-low {
+    @apply inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-slate-800 text-slate-400;
+  }
+
+  .priority-medium {
+    @apply inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-amber-900/40 text-amber-300;
+  }
+
+  .priority-high {
+    @apply inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-red-900/40 text-red-400;
+  }
+}
+
+/* Glow effects */
+.glow-dot {
+  box-shadow: 0 0 8px 2px rgba(108, 99, 255, 0.4);
+}
+
+/* Subtle grid background */
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(108, 99, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(108, 99, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}

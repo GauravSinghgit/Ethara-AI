@@ -1,0 +1,36 @@
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from app.database import create_tables
+from app.routes import auth, projects, tasks, dashboard, users
+
+app = FastAPI(
+    title="Team Task Manager API",
+    description="Production-ready task management system with RBAC",
+    version="1.0.0",
+)
+
+# CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Set specific origins in production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Include routers
+app.include_router(auth.router)
+app.include_router(projects.router)
+app.include_router(tasks.router)
+app.include_router(dashboard.router)
+app.include_router(users.router)
+
+
+@app.on_event("startup")
+def startup():
+    create_tables()
+
+
+@app.get("/health")
+def health():
+    return {"status": "ok", "service": "Team Task Manager API"}
