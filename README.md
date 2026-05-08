@@ -8,11 +8,6 @@ A production-quality full-stack task management application with role-based acce
 
 > Deploy to Railway using the steps below. Demo accounts are seeded automatically.
 
-| Role   | Email              | Password    |
-|--------|--------------------|-------------|
-| Admin  | admin@test.com     | password123 |
-| Member | member@test.com    | password123 |
-
 ---
 
 ## Features
