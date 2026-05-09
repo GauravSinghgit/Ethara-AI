@@ -7,8 +7,32 @@ A production-quality full-stack task management application with role-based acce
 ## Live Demo
 
 > Deploy to Railway using the steps below. Demo accounts are seeded automatically.
+```md
+### Demo Accounts
+
+#### Admin
+Email: admin@test.com  
+Password: password123
+
+#### Member
+Email: member@test.com  
+Password: password123
+```
+
+Frontend: https://your-frontend.up.railway.app  
+Backend API: https://your-backend.up.railway.app/docs
+```
 
 ---
+
+## Architecture
+
+Frontend (React + Vite)
+        ↓ REST API
+Backend (FastAPI)
+        ↓
+PostgreSQL Database
+
 
 ## Features
 
